@@ -451,6 +451,9 @@ void normalTimeDisplay(void) {
     MinNext = 0;
 
   HrDisp = (HrNow + 6); // Offset by 6 h to project *shadow* in the right place.
+  /* Dan: increase hour at 40 minutes */
+  if (MinNow >= 40)
+    HrDisp += 1;
 
   if ( HrDisp > 11) 
     HrDisp -= 12; 
